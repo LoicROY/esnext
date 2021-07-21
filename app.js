@@ -86,10 +86,11 @@ class TripService {
     set;
 
     constructor() {
-        this.set = new Set();
-        this.set.add(new Trip("paris", "Paris", "img/paris.jpg"));
-        this.set.add(new Trip("nantes", "Nantes", "img/nantes.jpg"));
-        this.set.add(new Trip("rio-de-janeiro", "Rio de Janeiro", "img/rio-de-janeiro.jpg"));
+        this.set = new Set([
+            new Trip("paris", "Paris", "img/paris.jpg"),
+            new Trip("nantes", "Nantes", "img/nantes.jpg"),
+            new Trip("rio-de-janeiro", "Rio de Janeiro", "img/rio-de-janeiro.jpg")
+        ]);
     }
 
 
@@ -113,9 +114,10 @@ class PriceService {
     map;
 
     constructor() {
-        this.map = new Map();
-        this.map.set('paris', 100);
-        this.map.set('rio-de-janeiro', 800);
+        this.map = new Map([
+            ['paris', 100],
+            ['rio-de-janeiro', 800]
+          ])
     }
 
     findPriceByTripId(tripId) {
